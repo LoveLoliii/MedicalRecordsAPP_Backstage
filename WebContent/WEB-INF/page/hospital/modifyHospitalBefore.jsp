@@ -413,7 +413,7 @@
 								修改
 							</li>
 						</ul><!-- .breadcrumb -->
-
+<%-- 
 						<div class="nav-search" id="nav-search">
 							<form class="form-search">
 								<span class="input-icon">
@@ -421,7 +421,7 @@
 									<i class="icon-search nav-search-icon"></i>
 								</span>
 							</form>
-						</div><!-- #nav-search -->
+						</div> --%><!-- #nav-search -->
 					</div>
 					<hr>
 								<div class="col-xs-12">
