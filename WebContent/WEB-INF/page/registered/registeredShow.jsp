@@ -24,7 +24,7 @@
 		<link rel="stylesheet" href="${ctx}/assets/css/ace-skins.min.css" />
 		<link rel="stylesheet" href="${ctx}/assets/SweetAlert/sweetalert.css" />
 		<link href="${ctx}/assets/js/toastr-master/toastr.css" rel="stylesheet" type="text/css" />
-		 <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		 <script src="${ctx}/assets/js/jquery-2.0.3.min.js"></script>
 		<script src="${ctx}/assets/js/ace-extra.min.js"></script>
 </head>
 <body>
@@ -57,12 +57,7 @@
 							</a>
 
 							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="#">
-										<i class="icon-cog"></i>
-										设置
-									</a>
-								</li>
+								 
 
 								<li>
 									<a href="${ctx}/dep/ment/doctorInfo">
@@ -74,7 +69,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="${ctx }/dep/ment/killSession">
 										<i class="icon-off"></i>
 										注销
 									</a>

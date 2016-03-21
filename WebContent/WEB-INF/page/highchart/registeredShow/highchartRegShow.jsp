@@ -130,13 +130,7 @@
 							</a>
 
 							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-								<li>
-									<a href="#">
-										<i class="icon-cog"></i>
-										设置
-									</a>
-								</li>
-
+								 
 								<li>
 									<a href="${ctx}/dep/ment/doctorInfo">
 										<i class="icon-user"></i>
@@ -147,7 +141,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="${ctx }/dep/ment/killSession">
 										<i class="icon-off"></i>
 										注销
 									</a>

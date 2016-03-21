@@ -118,6 +118,11 @@
 			<result name="evaluationShow">/WEB-INF/page/evaluation/evaluationShow.jsp</result>
 			<result name="showEvaluationGood">/WEB-INF/page/evaluation/evaluationShowGoodBad.jsp</result>
 		</action>
+		<action name="killSession" class="com.lua.action.killSession">
+			<result name="success" type="redirectAction">login</result>
+			
+		</action>
+		
 	</package>
 	
 	
