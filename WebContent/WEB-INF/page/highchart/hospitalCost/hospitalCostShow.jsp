@@ -393,9 +393,10 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">首页</a>
+								<a href="index">首页</a>
 							</li>
-							<li class="active">控制台</li>
+							<li class="active">统计中心</li>
+							<li ><a href="/MedicalRecordsAPP_Backstage/dep/ment/hospitalCostShow">医疗费用统计</a></li>
 						</ul><!-- .breadcrumb -->
 
 						<div class="nav-search" id="nav-search">

@@ -402,13 +402,18 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="index">首页</a>
 							</li>
 
-							<li>
-								<a href="#">More Pages</a>
+							<li  class="active">
+								医院科室管理
 							</li>
-							<li class="active">User Profile</li>
+							<li  >
+								<a href="/MedicalRecordsAPP_Backstage/dep/ment/maindepartment">科室基本信息管理</a>
+							</li>
+							<li>
+							<a href="/MedicalRecordsAPP_Backstage/dep/ment/maindepartment!insertMainDepartmentBefore.action">增加科室</a>
+							</li>
 						</ul><!-- .breadcrumb -->
 
 						<div class="nav-search" id="nav-search">

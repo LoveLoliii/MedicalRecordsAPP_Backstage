@@ -403,13 +403,15 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="index">首页</a>
 							</li>
-
+							<li class="active">医院信息管理</li>
 							<li>
-								<a href="#">More Pages</a>
+								<a href="/MedicalRecordsAPP_Backstage/dep/ment/hospitalbaseinfo">医院基本信息</a>
 							</li>
-							<li class="active">User Profile</li>
+							<li class="active">
+								修改
+							</li>
 						</ul><!-- .breadcrumb -->
 
 						<div class="nav-search" id="nav-search">

@@ -403,13 +403,22 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+							<a href="index">首页</a>
 							</li>
 
-							<li>
-								<a href="#">More Pages</a>
+							<li  class="active">
+								医院科室管理
 							</li>
-							<li class="active">User Profile</li>
+							<li  class="active">
+								配置科室信息
+							</li>
+							<li>
+							<a href="/MedicalRecordsAPP_Backstage/dep/ment/departmentanddoctor">科室与医生信息配置</a>
+							</li>
+							<li>
+							<a href="/MedicalRecordsAPP_Backstage/dep/ment/departmentanddoctor!showDoctor.action?minordepartment.minordepartment_ID=${minordepartment.minordepartment_ID }&minordepartment.minordepartment_name=${minordepartment.minordepartment_name }">查看属下医生</a>
+							</li>
+								
 						</ul><!-- .breadcrumb -->
 
 						<div class="nav-search" id="nav-search">

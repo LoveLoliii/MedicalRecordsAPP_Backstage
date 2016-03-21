@@ -399,13 +399,13 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="index">首页</a>
 							</li>
-
-							<li>
-								<a href="#">More Pages</a>
+							<li  >
+								<a href="/MedicalRecordsAPP_Backstage/dep/ment/doctorInfo">个人资料</a>
 							</li>
-							<li class="active">User Profile</li>
+							<li><a href="/MedicalRecordsAPP_Backstage/dep/ment/doctorInfo!modifyDoctorInfo.action?doctorBaseInfo.doctorInfo_ID=${doctorBaseInfo.doctorInfo_ID }">修改个人资料</a>
+							</li>
 						</ul><!-- .breadcrumb -->
 
 						<div class="nav-search" id="nav-search">

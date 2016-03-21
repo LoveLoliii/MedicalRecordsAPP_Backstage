@@ -402,13 +402,16 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="index">首页</a>
 							</li>
 
-							<li>
-								<a href="#">More Pages</a>
+							<li  class="active">
+								医生信息管理
 							</li>
-							<li class="active">User Profile</li>
+							<li  >
+								<a href="/MedicalRecordsAPP_Backstage/dep/ment/doctorAllInfo">医生基本信息管理</a>
+							</li>
+							
 						</ul><!-- .breadcrumb -->
 
 						<div class="nav-search" id="nav-search">

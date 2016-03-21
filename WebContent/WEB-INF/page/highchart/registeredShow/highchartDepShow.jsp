@@ -445,7 +445,7 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">首页</a>
+								<a href="index">首页</a>
 							</li>
 							<li class="active">控制台</li>
 						</ul><!-- .breadcrumb -->
