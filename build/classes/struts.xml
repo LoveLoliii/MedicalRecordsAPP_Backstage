@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+    <constant name="struts.multipart.maxSize" value="10701096"/>
+    
+	<package name="APP" namespace="/dep/ment" extends="struts-default">
+		 
+         <interceptors>
+             <interceptor name="sessionNull" class="com.interceptor.SessionNullInterceptor">
+             </interceptor>
+         </interceptors>
+         <global-results>
+             <result name="loginfailed" type="redirect">/dep/ment/login</result>
+         </global-results> 
+         
+         
+		<action name="login" class="com.lua.action.LoginAction">
+			<result name="login">/login.jsp</result>
+			<result name="failedlogin" type="redirect">login</result>
+			<result name="loginSuccess" type="redirect">index</result>
+		</action>
+		<action name="index" class="com.lua.action.IndexAction">
+			<result name="index">/WEB-INF/page/index.jsp</result>
+			<interceptor-ref name="sessionNull"></interceptor-ref>
+        	<interceptor-ref name="defaultStack"/>
+		</action>
+		<action name="doctorInfo" class="com.lua.action.DoctorInfoAction">
+			<result name="doctorInfoShow">/WEB-INF/page/doctor/doctorInfo.jsp</result>
+			<result name="modifyDoctorInfo">/WEB-INF/page/doctor/modifyDoctorInfo.jsp</result>
+			<result name="updateDoctorInfo" type="redirect">doctorInfo</result>
+			
+			<interceptor-ref name="sessionNull"></interceptor-ref>
+        	<interceptor-ref name="defaultStack"/>
+			
+		</action>
+		
+		<action name="doctorAllInfo" class="com.lua.action.DoctorAllInfoAction">
+			<result name="doctorAllInfoShow">/WEB-INF/page/doctor/doctorAllInfo.jsp</result>
+			<result name="insertDoctorAllInfoBefore">/WEB-INF/page/doctor/insertDoctorAllInfoBefore.jsp</result>
+			<result name="deleteDoctorinfo" type="redirect">doctorAllInfo?i3=${i3}</result>
+			<result name="insertDoctorAllInfoAfter" type="redirect">doctorAllInfo?i=${i}&amp;i2=${i2}</result>
+		</action>
+		
+		<action name="patientInfo" class="com.lua.action.PatientInfoAction">
+			<result name="patientInfoShow">/WEB-INF/page/patient/patientInfo.jsp</result>
+		</action>
+		<action name="registered" class="com.lua.action.RegisteredAction">
+			<result name="registeredShow">/WEB-INF/page/registered/registeredShow.jsp</result>
+			<result name="modifyRegistered" type="redirect">registered</result>
+		</action>
+		<action name="medical" class="com.lua.action.MedicalAction" > 
+			<result name="medicalShow">/WEB-INF/page/medical/medicalShow.jsp</result>
+			<result name="modifyMedicalBefore">/WEB-INF/page/medical/medicalModifyBefore.jsp</result>
+			<result name="modifyMedicalAfter" type="redirect">medical?i=${i}</result>
+		</action>
+		<action name="consultation" class="com.lua.action.ConsultationAction">
+			<result name="consultationShow">/WEB-INF/page/consultation/consultationShow.jsp</result>
+			<result name="consultationShowElse">/WEB-INF/page/consultation/consultationShowElse.jsp</result>
+			<result name="consultationShowAfter" type="redirect">consultation</result>
+		</action>
+		<action name="doctorVisit" class="com.lua.action.DoctorVisitAction">
+			<result name="doctorVisitShow">/WEB-INF/page/doctorVisit/doctorVisitShow.jsp</result>
+			<result name="modifyDoctorVisitBefore">/WEB-INF/page/doctorVisit/doctorVisitModifyBefore.jsp</result>
+			<result name="modifydoctorVisitAfter" type="redirect">doctorVisit?i=${i}</result>
+		</action>
+		<action name="maindepartment" class="com.lua.action.MainDepartmentAction">
+			<result name="maindepartmentShow">/WEB-INF/page/department/departmentShow.jsp</result>
+			<result name="modifyMainDepartmentBefore">/WEB-INF/page/department/departmentShowBefore.jsp</result>
+			<result name="modifyMainDepartmentAfter" type="redirect">maindepartment?i1=${i1}</result>
+			<result name="insertMainDepartmentBefore">/WEB-INF/page/department/insertDepartmentShowBefore.jsp</result>
+			<result name="insertMainDepartmentAfter" type="redirect">maindepartment?i=${i}</result>
+			<result name="deploymaindepartment">/WEB-INF/page/department/deploymaindepartment.jsp</result>
+			<result name="showMinordepartment">/WEB-INF/page/department/showMinordepartment.jsp</result>
+			<result name="modifyMinorDepartmentBefore">/WEB-INF/page/department/showMinordepartmentByID.jsp</result>
+			<result name="modifyMinorDepartmentAfter" type="redirect">maindepartment!deploymaindepartment?i2=${i2}</result>
+			<result name="insertMinorDepartmentBefore">/WEB-INF/page/department/insertMinorDepartmentBefore.jsp</result>
+			<result name="insertMinorDepartmentAfter" type="redirect">maindepartment!deploymaindepartment?i=${i}&amp;i1=${i1}</result>
+		</action>
+		<action name="departmentanddoctor" class="com.lua.action.DepartmentanddoctorAction">
+			<result name="departmentanddoctorAction">/WEB-INF/page/departmentanddoctor/departmentanddoctorShow.jsp</result>
+			<result name="showDoctor">/WEB-INF/page/departmentanddoctor/doctorShow.jsp</result>
+			<result name="modifyDepartmentAndDoctorBefore">/WEB-INF/page/departmentanddoctor/modifyDoctorBefore.jsp</result>
+			<result name="modifyDepartmentAndDoctorAfter" type="redirect">departmentanddoctor?i=${i}&amp;i2=${i2}</result>
+		</action>
+		<action name="hospitalbaseinfo" class="com.lua.action.HospitalAction">
+			<result name="hospitalbaseinfoShow">/WEB-INF/page/hospital/hospitalbaseinfoShow.jsp</result>
+			<result name="modifyHospitalBefore">/WEB-INF/page/hospital/modifyHospitalBefore.jsp</result>
+			<result name="modifyHospitalAfter" type="redirect">hospitalbaseinfo?i=${i}</result>
+		</action>
+		<action name="registrationfee" class="com.lua.action.RegistrationFeeAction">
+			<result name="registrationFeeShow">/WEB-INF/page/registrationfee/registrationFeeShow.jsp</result>
+			<result name="modifyRegistrationFeeBefore">/WEB-INF/page/registrationfee/modifyRegistrationFeeBefore.jsp</result>
+			<result name="modifyRegistrationFeeAfter"  type="redirect">registrationfee?i1=${i1}</result>
+			<result name="insertRegistrationFeeBefore">/WEB-INF/page/registrationfee/insertRegistrationFeeBefore.jsp</result>
+			<result name="insertRegistrationFeeAfter" type="redirect">registrationfee?i=${i}</result>
+		</action>
+		
+		<action name="drug" class="com.lua.action.DrugAction">
+			<result name="drugShow">/WEB-INF/page/drug/drugShow.jsp</result>
+			<result name="modifyDrugBefore">/WEB-INF/page/drug/modifydrugBefore.jsp</result>
+			<result name="modifyDrugAfter" type="redirect">drug?i=${i}</result>
+			<result name="insertDrugBefore">/WEB-INF/page/drug/insertDrugBefore.jsp</result>
+			<result name="insertDrugAfter" type="redirect">drug?i1=${i1}&amp;i2=${i2}</result>
+		</action>
+		<action name="druguse" class="com.lua.action.DruguseAction">
+			<result name="drugShow">/WEB-INF/page/druguse/druguseShow.jsp</result>
+			<result name="modifyDrugUseBefore">/WEB-INF/page/druguse/modifyDrugUseBefore.jsp</result>
+			<result name="modifyDrugUseAfter" type="redirect">druguse?i=${i}</result>
+		</action>
+		<action name="pay" class="com.lua.action.PayAction">
+			<result name="payShow">/WEB-INF/page/pay/payShow.jsp</result>
+		</action>
+		<action name="evaluation" class="com.lua.action.EvaluationAction">
+			<result name="evaluationShow">/WEB-INF/page/evaluation/evaluationShow.jsp</result>
+			<result name="showEvaluationGood">/WEB-INF/page/evaluation/evaluationShowGoodBad.jsp</result>
+		</action>
+	</package>
+	
+	
+	<package name="demo" namespace="/dep/ment" extends="json-default">
+		<action name="highchart" class="com.lua.action.HighchartAction" >              
+            <result type="json"></result>
+            <result name="highchartShow">/WEB-INF/page/highchart/highchartShow.jsp</result>
+            <result name="showRegHighchart">/WEB-INF/page/highchart/registeredShow/highchartRegShow.jsp</result>
+            <result name="showDocHighchartFirst">/WEB-INF/page/highchart/highchartShowDocFirst.jsp</result>
+            <result name="showDocHighchart">/WEB-INF/page/highchart/registeredShow/highchartDocShow.jsp</result>
+            <result name="showDepartmentHighchart">/WEB-INF/page/highchart/showDepartmentShowFir.jsp</result>
+            <result name="showDepartmentAfter">/WEB-INF/page/highchart/registeredShow/highchartDepShow.jsp</result>
+        </action>
+        
+        <action name="hospitalCostShow" class="com.lua.action.HospitalCostShowAction" >              
+            <result type="json"></result>
+            <result name="hospitalCostShow">/WEB-INF/page/highchart/hospitalCost/hospitalCostShow.jsp</result>
+            <result name="ShowYearHigh">/WEB-INF/page/highchart/hospitalCost/ShowYearHigh.jsp</result>
+        </action>
+        
+         <action name="dialogShow" class="com.lua.action.DialogShowAction" >              
+            <result type="json"></result>
+            <result name="showDocByID">/WEB-INF/page/dialogShow/showDocByID.jsp</result>
+            <result name="showPatByID">/WEB-INF/page/dialogShow/showPatByID.jsp</result>
+            <result name="showVisByID">/WEB-INF/page/dialogShow/showVisiByID.jsp</result>
+            <result name="showRegByID">/WEB-INF/page/dialogShow/showRegByID.jsp</result>
+            <result name="showMedByID">/WEB-INF/page/dialogShow/showMedByID.jsp</result>
+            <result name="showDrugByID">/WEB-INF/page/dialogShow/showDrugByID.jsp</result>
+            <result name="showDrugUseByID">/WEB-INF/page/dialogShow/showDrugUseByID.jsp</result>
+        </action>
+	</package>
+	
+</struts>

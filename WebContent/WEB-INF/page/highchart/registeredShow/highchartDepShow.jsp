@@ -102,7 +102,7 @@
 								<img class="nav-user-photo" src="${ctx}/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
 									<small>欢迎光临,</small>
-									Jason
+									${session.doctorBaseInfo.getDoctorInfo_name()}
 								</span>
 
 								<i class="icon-caret-down"></i>

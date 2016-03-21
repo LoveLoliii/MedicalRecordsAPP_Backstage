@@ -48,8 +48,8 @@
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
 								<img class="nav-user-photo" src="${ctx}/assets/avatars/user.jpg" alt="Jason's Photo" />
 								<span class="user-info">
-									<small>Welcome,</small>
-									Jason
+									<small>欢迎光临,</small>
+									${session.doctorBaseInfo.getDoctorInfo_name()}
 								</span>
 
 								<i class="icon-caret-down"></i>
@@ -402,13 +402,13 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="index">首页</a>
 							</li>
 
-							<li>
-								<a href="#">More Pages</a>
+							<li class="active">
+								患者信息管理
 							</li>
-							<li class="active">User Profile</li>
+							<li ><a href="/MedicalRecordsAPP_Backstage/dep/ment/consultation">医患咨询管理</a></li>
 						</ul><!-- .breadcrumb -->
 
 						<div class="nav-search" id="nav-search">

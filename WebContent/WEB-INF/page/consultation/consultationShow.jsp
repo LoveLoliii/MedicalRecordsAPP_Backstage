@@ -49,7 +49,9 @@
 					<li class="light-blue"><a data-toggle="dropdown" href="#"
 						class="dropdown-toggle"> <img class="nav-user-photo"
 							src="${ctx}/assets/avatars/user.jpg" alt="Jason's Photo" /> <span
-							class="user-info"> <small>Welcome,</small> Jason
+							class="user-info"> 									
+							<small>欢迎光临,</small>
+							${session.doctorBaseInfo.getDoctorInfo_name()}
 						</span> <i class="icon-caret-down"></i>
 					</a>
 
@@ -288,7 +290,7 @@
 					</script>
 
 					<ul class="breadcrumb">
-						<li><i class="icon-home home-icon"></i> <a href="#">首页</a></li>
+						<li><i class="icon-home home-icon"></i> <a href="index">首页</a></li>
 						<li class="active">控制台</li>
 					</ul>
 					<!-- .breadcrumb -->
