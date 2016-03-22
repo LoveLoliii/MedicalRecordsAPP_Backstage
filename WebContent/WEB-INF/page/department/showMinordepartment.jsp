@@ -26,6 +26,30 @@
 		<link rel="stylesheet" href="${ctx}/assets/css/ace-skins.min.css" />
 		<link href="${ctx}/assets/js/toastr-master/toastr.css" rel="stylesheet" type="text/css" />
 		<script src="${ctx}/assets/js/ace-extra.min.js"></script>
+		
+		<!-- 实现注销弹窗 -->
+			<!-- Jquery --> 		<script src="${ctx}/assets/js/jquery-1.11.3.min.js"> </script>
+    		<!-- Confirm Modal -->  <script type="text/javascript" src="${ctx}/assets/js/confirm.js"></script>
+    
+ <script>
+
+$(function() {
+        Confirm.init('sm');
+ $('#delete1').unbind();
+        $('#delete1').bind('click', function(e) {
+            e.preventDefault();
+            Confirm.show('注销确认', '您确定要退出此账号吗？', {
+                '确定': {
+                    'primary': true,
+                    'callback': function() {
+                        Confirm.show('信息', '退出中！');
+                        window.setTimeout("window.location='${ctx }/dep/ment/killSession'",2000); 
+                    }
+                }
+            });
+        });
+ });
+</script>
 </head>
 <body>
 	<div class="navbar navbar-default" id="navbar">
@@ -68,11 +92,8 @@
 
 								<li class="divider"></li>
 
-								<li>
-									<a href="${ctx }/dep/ment/killSession">
-										<i class="icon-off"></i>
-										注销
-									</a>
+								<li ><i class="icon-off" ></i>
+										<button id="delete1" class="btn btn-success" type="submit">注销</button>
 								</li>
 							</ul>
 						</li>

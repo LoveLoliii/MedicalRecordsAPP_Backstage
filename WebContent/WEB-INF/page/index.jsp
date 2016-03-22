@@ -29,13 +29,11 @@ $(function() {
         $('#delete1').bind('click', function(e) {
             e.preventDefault();
             Confirm.show('注销确认', '您确定要退出此账号吗？', {
-                'Delete': {
+                '确定': {
                     'primary': true,
                     'callback': function() {
-                   
-                        Confirm.show('信息', '您已退出！');
-                        
-                        window.location.href="${ctx }/dep/ment/killSession";
+                        Confirm.show('信息', '退出中！');
+                        window.setTimeout("window.location='${ctx }/dep/ment/killSession'",2000); 
                     }
                 }
             });
@@ -87,9 +85,7 @@ $(function() {
 
 								<li class="divider"></li>
 
-								<li >
-									
-										<i class="icon-off" ></i>
+								<li ><i class="icon-off" ></i>
 										<button id="delete1" class="btn btn-success" type="submit">注销</button>
 									
 								</li>

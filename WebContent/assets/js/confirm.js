@@ -35,7 +35,7 @@
             closeButton = '<button id="modal-close" type="button" class="btn btn-default modal-custom-button">取消</button>';
         else {
             self.customButton = {
-                'Okay': {
+                '即将退出': {
                     'primary': true,
                     'callback': function() {
                         Confirm.hide();
