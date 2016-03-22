@@ -2,8 +2,9 @@ package com.interceptor;
 
 import javax.servlet.http.HttpServletRequest; 
 
-import org.apache.struts2.ServletActionContext; 
+import org.apache.struts2.ServletActionContext;
 
+import com.lua.action.LoginAction;
 import com.opensymphony.xwork2.Action;
  import com.opensymphony.xwork2.ActionInvocation;
  import com.opensymphony.xwork2.interceptor.Interceptor; 
@@ -21,6 +22,11 @@ public void init() {
  } 
 
 public String intercept(ActionInvocation invocation) throws Exception {
+	Object o =invocation.getAction();
+	if(o instanceof LoginAction){
+		return invocation.invoke();
+	}
+	
     HttpServletRequest req = ServletActionContext.getRequest();
     if (req.getSession().getAttribute("doctorBaseInfo") == null) {
      return "loginfailed";

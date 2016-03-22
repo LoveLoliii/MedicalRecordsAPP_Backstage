@@ -6,17 +6,23 @@
 <struts>
 	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
     <constant name="struts.multipart.maxSize" value="10701096"/>
-    
+
 	<package name="APP" namespace="/dep/ment" extends="struts-default">
 		 
+          
          <interceptors>
-             <interceptor name="sessionNull" class="com.interceptor.SessionNullInterceptor">
+           <interceptor name="sessionNull" class="com.interceptor.SessionNullInterceptor">
              </interceptor>
-         </interceptors>
-         <global-results>
-             <result name="loginfailed" type="redirect">/dep/ment/login</result>
-         </global-results> 
-         
+           <interceptor-stack name="mystack">   
+               <interceptor-ref name="sessionNull"></interceptor-ref>
+               <interceptor-ref name="defaultStack"></interceptor-ref>
+           </interceptor-stack>
+       </interceptors>
+
+   		<default-interceptor-ref name="mystack"></default-interceptor-ref>
+                      <global-results> <!-- 全局结果 用于处理访问各个action 失败的return -->
+         <result name="loginfailed" type="redirect">login</result>
+         </global-results>
          
 		<action name="login" class="com.lua.action.LoginAction">
 			<result name="login">/login.jsp</result>
@@ -25,16 +31,13 @@
 		</action>
 		<action name="index" class="com.lua.action.IndexAction">
 			<result name="index">/WEB-INF/page/index.jsp</result>
-			<interceptor-ref name="sessionNull"></interceptor-ref>
-        	<interceptor-ref name="defaultStack"/>
 		</action>
 		<action name="doctorInfo" class="com.lua.action.DoctorInfoAction">
 			<result name="doctorInfoShow">/WEB-INF/page/doctor/doctorInfo.jsp</result>
 			<result name="modifyDoctorInfo">/WEB-INF/page/doctor/modifyDoctorInfo.jsp</result>
 			<result name="updateDoctorInfo" type="redirect">doctorInfo</result>
 			
-			<interceptor-ref name="sessionNull"></interceptor-ref>
-        	<interceptor-ref name="defaultStack"/>
+			
 			
 		</action>
 		
